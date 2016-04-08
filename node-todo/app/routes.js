@@ -33,7 +33,7 @@ function getFoodTotal(res){
         var total = 0;
         for(var i in foods)
         {
-            total += foods[i].price;
+            total += parseFloat(foods[i].price);
         }
         res.json(total);
     }

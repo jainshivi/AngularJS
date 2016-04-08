@@ -103,6 +103,13 @@ angular.module('foodController', [])
 						$scope.formData = {}; // clear the form so our user is ready to enter another
 						$scope.foods = data; // assign our new list of todos
 					});
+
+				Foods.getTotal()
+					.success(function(data) {
+						debugger;
+						$scope.total = data;
+						$scope.loading = false;
+					});
 			}
 		};
 
@@ -116,6 +123,13 @@ angular.module('foodController', [])
 				.success(function(data) {
 					$scope.loading = false;
 					$scope.foods = data; // assign our new list of todos
+				});
+
+				Foods.getTotal()
+				.success(function(data) {
+					debugger;
+					$scope.total = data;
+					$scope.loading = false;
 				});
 		};
 	}]);
